@@ -21,43 +21,37 @@ class Bomb extends Component {
         }, 1000)
        
       } 
-    
 
-    
-    
-    render (){
-        const { time } = this.state
-        if (time >= 8){
-            return (
-                <div>
-                <p>BOOM!</p>
-                </div>
-            )
-        } else if (time % 2 !== 0){
-            return (
-                <div>
-                <p>tock</p>
-                </div>
-            )
-        } else if (time % 2 === 0){
-            return (
-                <div>
-                  <p>tick</p>
-                </div>
-            )
-        } else {
-            return (
-                <div>
-                  <p>{time}</p>
-                </div>
-            )
-        }
-       
-    }
 
     componentWillUnmount(){
         clearInterval(this.interval);
     }
+
+    displayCount (){
+        const time = this.state.count;
+        if (time >= 8){
+            clearInterval(this.interval);
+            return 'BOOM!';
+        } else if (time % 2 === 0){
+            return 'tick';
+        } else {
+            return 'tock';
+        }
+    } 
+
+    
+    
+    render (){
+        console.log(this.displayCount());
+        return (
+            <div>
+                <p>{this.displayCount()}</p>
+            </div>
+        )
+       
+    }
+
+    
 }
 
 export default Bomb;
