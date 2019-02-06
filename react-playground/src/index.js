@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import RouletteGun from './state-drills/RouletteGun.js';
+import Accordion from './state-drills/Accordion.js';
 
-ReactDOM.render(<RouletteGun />, document.getElementById('root'));
+ReactDOM.render(<Accordion />, document.getElementById('root'));
 
